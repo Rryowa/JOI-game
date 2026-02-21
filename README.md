@@ -1,14 +1,4 @@
-## JOI<sup>.how</sup>
-
-<a href="https://joi.how" title="joi.how">
-    <img src="public/logo.svg" alt="eggplant" width="160" />
-</a>
-
-</br></br>
-
-Joi.how is a web app e621 slideshow that has a jack-off-instruction-style stroke-to-the-beat UI!
-
-If there's anything you'd like to see added, feel free to [open an issue](/issues) or ask in the [forum thread](https://e621.net/forum_topics/23796).
+### Joi.how fork
 
 ### Features
 
