@@ -11,7 +11,7 @@ export const climaxEvent = async (data: EventDataRef) => {
 
   setPhase(GamePhase.finale); // this disables events
 
-  const duration = getWeightedDuration(5000, 30000, 100, true);
+  const duration = getWeightedDuration(30000, 10000, 100);
   const countdownSeconds = Math.floor(duration / 1000);
   for (let i = countdownSeconds; i > 0; i--) {
     sendMessage({

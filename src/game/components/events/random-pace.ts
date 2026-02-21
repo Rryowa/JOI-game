@@ -21,7 +21,7 @@ export const randomPaceEvent = async (data: EventDataRef) => {
     title: `Pace changed to ${newPace}!`,
     duration: 5000,
   });
-  const duration = getWeightedDuration(5000, 15000, intensity, true);
+  const duration = getWeightedDuration(20000, 5000, intensity);
   await wait(duration);
 
   const restorePace = round(intensityToPace(intensity, steepness, timeshift, {

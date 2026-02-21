@@ -14,7 +14,7 @@ export const pauseEvent = async (data: EventDataRef) => {
     title: 'Stop stroking!',
   });
   setPhase(GamePhase.pause);
-  const duration = getWeightedDuration(10000, 40000, intensity, true);
+  const duration = getWeightedDuration(40000, 10000, intensity);
   await wait(duration);
 
   const restorePace = round(intensityToPace(intensity, steepness, timeshift, {

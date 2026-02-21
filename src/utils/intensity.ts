@@ -21,13 +21,18 @@ export const intensityToPace = (
   const c = 3 * x2;
 
   const roots = polynomialRoot(-intensity, c, b, a);
-  const t = roots.find(
-    (root): root is number => typeof root === 'number' && root >= 0 && root <= 1
-  );
+  const t = roots
+    .find((root): root is number | any => {
+      const re = typeof root === 'number' ? root : (root as any).re;
+      const im = typeof root === 'number' ? 0 : (root as any).im;
+      return !isNaN(re) && Math.abs(im) < 0.01 && re >= -0.01 && re <= 1.01;
+    });
 
   if (t === undefined) return min;
 
-  const y = 0.1 * t + 0.9 * Math.pow(t, 6);
+  const reT = typeof t === 'number' ? t : (t as any).re;
+  const clampedT = Math.max(0, Math.min(1, reT));
+  const y = 0.1 * clampedT + 0.9 * Math.pow(clampedT, 6);
   return y * (max - min) + min;
 };
 

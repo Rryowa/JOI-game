@@ -23,10 +23,8 @@ const ProgressBarFill = styled(motion.div)<{
   $direction: ProgressBarProps['direction'];
   $color: ProgressBarProps['color'];
 }>`
-  width: ${({ $direction }) =>
-    $direction === 'horizontal' ? `${$direction}%` : '100%'};
-  height: ${({ $direction }) =>
-    $direction === 'vertical' ? `${$direction}%` : '100%'};
+  width: 100%;
+  height: 100%;
   background-color: ${({ $color }) => $color ?? 'var(--primary)'};
   position: absolute;
   bottom: 0;

@@ -8,13 +8,13 @@ const StyledGameMeter = styled.div`
   pointer-events: none;
 `;
 
-const StyledGameMeterCircle = motion.create(styled.div`
+const StyledGameMeterCircle = styled(motion.div)`
   aspect-ratio: 1;
   width: 250px;
   border-radius: 100%;
   opacity: 0.3;
   border: 1px solid #000;
-`);
+`;
 
 enum MeterColor {
   light = 'light',

@@ -16,7 +16,7 @@ export const halfPaceEvent = async (data: EventDataRef) => {
   });
   const newPace = Math.max(round(pace / 2), minPace);
   setPace(newPace);
-  const duration = getWeightedDuration(15000, 60000, intensity, true);
+  const duration = getWeightedDuration(30000, 10000, intensity);
   const durationPortion = duration / 3;
   sendMessage({
     id: GameEvent.halfPace,

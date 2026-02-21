@@ -6,12 +6,12 @@ import { GamePhase, useGameValue } from '../GameProvider';
 import { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
-const StyledGameHypno = motion.create(styled.div`
+const StyledGameHypno = styled(motion.div)`
   pointer-events: none;
   font-size: 4rem;
   font-weight: bold;
   -webkit-text-stroke: black 1px;
-`);
+`;
 
 export const GameHypno = () => {
   const [hypno] = useSetting('hypno');

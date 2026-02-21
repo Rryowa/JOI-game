@@ -68,7 +68,7 @@ const ImageThumbnailTile: React.FC<ImageThumbnailTileProps> = ({
   );
 };
 
-const StyledSelectionOverlay = motion.create(styled.div`
+const StyledSelectionOverlay = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +83,7 @@ const StyledSelectionOverlay = motion.create(styled.div`
 
   background: var(--overlay-background);
   color: var(--overlay-color);
-`);
+`;
 
 interface SelectionOverlayProps {
   selecting?: boolean;
@@ -118,7 +118,7 @@ interface ImageMiniViewProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const StyledImageMiniView = styled.div``;
 
-const StyledImageMiniViewContent = motion.create(styled.div``);
+const StyledImageMiniViewContent = styled(motion.div)``;
 
 const StyledImageMiniViewImage = styled.div`
   width: 300px;

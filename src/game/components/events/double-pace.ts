@@ -17,7 +17,7 @@ export const doublePaceEvent = async (data: EventDataRef) => {
     id: GameEvent.doublePace,
     title: 'Double pace!',
   });
-  const duration = getWeightedDuration(5000, 15000, intensity, false);
+  const duration = getWeightedDuration(15000, 5000, intensity);
   const durationPortion = duration / 3;
   sendMessage({
     id: GameEvent.doublePace,
