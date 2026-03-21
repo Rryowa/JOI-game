@@ -14,7 +14,7 @@ import {
   GameSettings,
   GameVibrator,
 } from './components';
-import { GameProvider } from './GameProvider';
+import { GameProvider, Paws, PawLabels, useGameValue } from './GameProvider';
 
 const StyledGamePage = styled.div`
   position: relative;
@@ -72,6 +72,31 @@ const StyledCenter = styled.div`
   }
 `;
 
+const StyledGripLabel = styled.div`
+  position: absolute;
+  top: calc(50% + 145px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  color: var(--overlay-color);
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  pointer-events: none;
+  opacity: 0.5;
+`;
+
+const GripLabel = () => {
+  const [paws] = useGameValue('paws');
+  if (paws === Paws.none) return null;
+  return <StyledGripLabel>{PawLabels[paws]}</StyledGripLabel>;
+};
+
 const StyledBottomBar = styled.div`
   position: absolute;
   bottom: 0;
@@ -109,6 +134,7 @@ export const GamePage = () => {
           <GameMessages />
           <GameMeter />
           <GameHypno />
+          <GripLabel />
         </StyledCenter>
         <StyledBottomBar>
           <GameSettings />

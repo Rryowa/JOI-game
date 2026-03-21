@@ -3,15 +3,19 @@ import { createStateProvider } from '../utils';
 import { ImageItem } from '../types';
 
 export enum Paws {
-  base = 'base',
-  tip = 'tip',
   none = 'none',
+  fullBase = 'fullBase',
+  fullHead = 'fullHead',
+  twoBase = 'twoBase',
+  twoHead = 'twoHead',
 }
 
 export const PawLabels: Record<Paws, string> = {
-  [Paws.base]: 'Base Only',
-  [Paws.tip]: 'Tip Only',
   [Paws.none]: 'Full Grip',
+  [Paws.fullBase]: 'Full Grip – Base Only',
+  [Paws.fullHead]: 'Full Grip – Head Only',
+  [Paws.twoBase]: 'Two Fingers – Base Only',
+  [Paws.twoHead]: 'Two Fingers – Head Only',
 };
 
 export enum Stroke {

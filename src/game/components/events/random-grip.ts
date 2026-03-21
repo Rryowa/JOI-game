@@ -8,7 +8,7 @@ export const randomGripEvent = async (data: EventDataRef) => {
     game: { paws, setPaws, sendMessage },
   } = data.current;
 
-  const choices = [Paws.base, Paws.tip, Paws.none].filter(p => p !== paws);
+  const choices = [Paws.fullBase, Paws.fullHead, Paws.twoBase, Paws.twoHead].filter(p => p !== paws);
   const newPaws = choices[Math.floor(Math.random() * choices.length)];
 
   setPaws(newPaws);

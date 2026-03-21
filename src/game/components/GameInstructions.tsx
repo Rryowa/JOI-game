@@ -5,6 +5,7 @@ import {
   faFire,
   faHandFist,
   faHandPointer,
+  faHandScissors,
   faHands,
   faPerson,
   faPersonRunning,
@@ -51,7 +52,7 @@ const StyledInfoText = styled.div`
 
 const StyledGripIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
 `;
 
@@ -97,13 +98,16 @@ export const GameInstructions = () => {
         <>
           <WaDivider orientation='vertical' style={{ alignSelf: 'center' }} />
           <StyledGripIcons>
-            <StyledActiveIcon $active={paws === Paws.base}>
-              <FontAwesomeIcon icon={faHandFist} />
-            </StyledActiveIcon>
-            <StyledActiveIcon $active={paws === Paws.none}>
+            <StyledActiveIcon $active={paws === Paws.fullBase || paws === Paws.fullHead}>
               <FontAwesomeIcon icon={faHands} />
             </StyledActiveIcon>
-            <StyledActiveIcon $active={paws === Paws.tip}>
+            <StyledActiveIcon $active={paws === Paws.twoBase || paws === Paws.twoHead}>
+              <FontAwesomeIcon icon={faHandScissors} />
+            </StyledActiveIcon>
+            <StyledActiveIcon $active={paws === Paws.fullBase || paws === Paws.twoBase}>
+              <FontAwesomeIcon icon={faHandFist} />
+            </StyledActiveIcon>
+            <StyledActiveIcon $active={paws === Paws.fullHead || paws === Paws.twoHead}>
               <FontAwesomeIcon icon={faHandPointer} />
             </StyledActiveIcon>
             <StyledInfoText>

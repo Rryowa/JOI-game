@@ -94,8 +94,9 @@ export const rollEventDice = (
 
   // Calculate probabilities for enabled events in this category
   // Filter out the last event to prevent immediate repetition
-  const candidates = events
-    .filter(e => config[e as keyof typeof config] && e !== lastEventRef.current)
+  const eligible = events.filter(e => config[e as keyof typeof config]);
+  const deduplicated = eligible.filter(e => e !== lastEventRef.current);
+  const candidates = (deduplicated.length > 0 ? deduplicated : eligible)
     .map(e => {
       const cfg = config[e as keyof typeof config]!;
       const R = cfg.base + cfg.scale * normalizedIntensity;

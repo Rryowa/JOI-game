@@ -173,7 +173,7 @@ export const GameImages = () => {
 
   const switchDuration = useMemo(() => {
     // If we are paused or the pace is 0, stop switching images.
-    if (phase === GamePhase.pause || (pace <= 0 && phase !== GamePhase.warmup)) {
+    if (pace <= 0 && phase !== GamePhase.warmup && phase !== GamePhase.pause) {
       return undefined;
     }
 
