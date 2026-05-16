@@ -29,15 +29,7 @@ To locally run it:
 ```sh
 git clone https://github.com/clynamic/joi.how.git
 cd joi.how
-yarn
+yarn install
 yarn build
 yarn preview
 ```
-
-4. open one of the URLs listed in your browser
-
-### Social
-
-- We have an [e6 forum thread](https://e621.net/forum_topics/23796). We'd love to hear your feedback.
-- Want to let other people set your wallpaper? Try [Walltaker](https://walltaker.joi.how/).
-- Need support? visit our [discord server](https://discord.clynamic.net/).
